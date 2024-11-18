@@ -1,0 +1,172 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #3b3b78cc, #91617ecc), url('images/bg.jpg');
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center center; /* Center the image */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.main-container {
+  width: 400px;
+  max-width: 650px;
+}
+
+.profile-card {
+  background: #121212cc;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.profile-header {
+  margin-bottom: 20px;
+}
+
+/* Gradient ring around profile image */
+/* Gradient ring around profile image with a gap */
+.profile-image-wrapper {
+  width: 150px; /* Increased to accommodate the gap */
+  height: 150px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px; /* Gap between the image and border */
+  border: 2px solid #91617e;
+}
+
+.profile-image {
+  width: 135px; /* Original image size */
+  height: 135px;
+  border-radius: 50%;
+  background: #121212; /* Optional background for better contrast */
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 22px;
+  color: #b787a4;
+  margin-bottom: 10px;
+}
+
+.bio {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+/* Social Links (Resume, Portfolio, etc.) */
+.social-links {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Default grid layout for laptops and larger screens */
+@media (min-width: 769px) {
+  .social-links {
+    grid-template-columns: repeat(2, auto); /* Two buttons per row, compact */
+    grid-auto-rows: auto; /* Automatically adjust row height */
+    justify-content: center;
+  }
+  .social-links > :nth-child(5) {
+    grid-column: 1 / -1; /* Make the 5th button span across the entire row */
+  }
+}
+
+/* Social buttons */
+.social-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the text vertically */
+  gap: 8px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: 2px solid transparent; /* Transparent border */
+  background: none;
+  background-clip: padding-box;
+  border-image: linear-gradient(135deg, #3b3b78, #91617e); /* Gradient border */
+  border-image-slice: 1; /* Ensure the gradient covers the border fully */
+}
+
+.social-btn:hover {
+  background: linear-gradient(135deg, #3b3b78, #91617e); /* Add gradient background on hover */
+  color: #fff;
+}
+
+
+.social-btn:hover::before {
+  opacity: 0; /* Disable the hover effect for the gradient background */
+}
+
+/* Ensure buttons wrap on smaller screens (iPhone) */
+@media (max-width: 768px) {
+  .social-links {
+    grid-template-columns: 1fr; /* Single button per row */
+    gap: 10px;
+  }
+
+  .social-btn {
+    width: 100%; /* Ensure each button takes up full width */
+    max-width: 100%;
+    text-align: center; /* Center the text for each button */
+  }
+}
+
+/* Icon links (extra links) */
+.extra-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ff7755, #1e3a8a);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
